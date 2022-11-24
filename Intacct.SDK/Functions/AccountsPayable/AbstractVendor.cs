@@ -128,6 +128,10 @@ namespace Intacct.SDK.Functions.AccountsPayable
 
         public string PaymentTerm;
 
+        public string FilePaymentService;
+
+        public string PaymentCountryCode;
+
         public bool? TermDiscountDisplayedOnCheckStub;
 
         public bool? AchEnabled;
@@ -153,6 +157,8 @@ namespace Intacct.SDK.Functions.AccountsPayable
         public List<string> RestrictedLocations = new List<string>();
 
         public List<string> RestrictedDepartments = new List<string>();
+
+        public List<VendorBankFileDetail> VendorBankFileDetails = new List<VendorBankFileDetail>();
 
         public Dictionary<string, dynamic> CustomFields = new Dictionary<string, dynamic>();
 
@@ -194,6 +200,19 @@ namespace Intacct.SDK.Functions.AccountsPayable
                 {
                     contactListInfo.WriteXmlContactListInfo(ref xml);
                 }
+            }
+        }
+
+        protected void WriteXmlBankfileDetails(ref IaXmlWriter xml)
+        {            
+            if (VendorBankFileDetails.Count > 0)
+            {
+                xml.WriteStartElement("VENDORBANKFILEDETAILS");
+                foreach (var bankfileDetail in VendorBankFileDetails)
+                {
+                    bankfileDetail.WriteXml(ref xml);
+                }
+                xml.WriteEndElement();
             }
         }
     }

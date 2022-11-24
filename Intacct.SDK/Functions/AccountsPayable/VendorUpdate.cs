@@ -129,6 +129,10 @@ namespace Intacct.SDK.Functions.AccountsPayable
             xml.WriteElement("VENDORACCOUNTNO", VendorAccountNo);
             xml.WriteElement("DISPLAYACCTNOCHECK", LocationAssignedAccountNoDisplayedOnCheckStub);
 
+            xml.WriteElement("FILEPAYMENTSERVICE", FilePaymentService);
+            xml.WriteElement("PYMTCOUNTRYCODE", PaymentCountryCode);
+            WriteXmlBankfileDetails(ref xml);
+
             // TODO: Location assigned account numbers
 
             xml.WriteElement("OBJECTRESTRICTION", RestrictionType);
