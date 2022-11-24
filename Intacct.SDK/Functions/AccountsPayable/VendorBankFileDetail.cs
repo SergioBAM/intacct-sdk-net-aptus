@@ -28,6 +28,7 @@ namespace Intacct.SDK.Functions.AccountsPayable
 
         public override void WriteXml(ref IaXmlWriter xml)
         {
+            xml.WriteStartElement("VENDORBANKFILEDETAIL");
             xml.WriteElement("ACCOUNTCODE", AccountCode);
             xml.WriteElement("ACCOUNTNAME", AccountName);
             xml.WriteElement("BANKACCOUNTNUMBER", AccountNumber);
@@ -41,6 +42,7 @@ namespace Intacct.SDK.Functions.AccountsPayable
             xml.WriteElement("VENDORID", VendorId);
             xml.WriteElement("VENDORKEY", VendorKey);
             xml.WriteElement("BUSINESSIDCODE", CreditorBIC);
+            xml.WriteEndElement();
         }
     }
 }

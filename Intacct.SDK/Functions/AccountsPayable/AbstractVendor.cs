@@ -160,6 +160,7 @@ namespace Intacct.SDK.Functions.AccountsPayable
 
         public List<VendorBankFileDetail> VendorBankFileDetails = new List<VendorBankFileDetail>();
 
+
         public Dictionary<string, dynamic> CustomFields = new Dictionary<string, dynamic>();
 
         protected AbstractVendor(string controlId = null) : base(controlId)
