@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Intacct.SDK.Functions.AccountsPayable
 {
-    public abstract class VendorBankFileDetail : AbstractFunction
+    public class VendorBankFileDetail : AbstractFunction
     {
         public string AccountCode;
         public string AccountName;
