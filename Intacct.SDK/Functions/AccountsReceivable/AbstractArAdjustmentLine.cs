@@ -61,6 +61,8 @@ namespace Intacct.SDK.Functions.AccountsReceivable
 
         public Dictionary<string, dynamic> CustomFields = new Dictionary<string, dynamic>();
 
+        public List<AbstractInvoiceLineTaxEntries> Taxentry = new List<AbstractInvoiceLineTaxEntries>();
+
         protected AbstractArAdjustmentLine()
         {
         }
